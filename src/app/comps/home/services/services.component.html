@@ -1,0 +1,30 @@
+<div class="bg-[#18181A] text-white text-center pt-[140px] pb-16 flex flex-col gap-8 body">
+
+     <div class="pb-10">
+        <h1 class="text-3xl font-bold">Our Services</h1>
+     </div>
+        <div class="flex flex-col md:flex-row md:justify-between gap-5 text-left px-4 relative w-full">
+            <div 
+              class="bg-black rounded-lg px-6 py-4 flex flex-col gap-2 card group transition-transform duration-300 md:w-[33%] relative md:h-[350px]" 
+              *ngFor="let item of serve; let i = index">
+              <fa-icon 
+                [icon]="item.icon" 
+                class="text-5xl text-[#E11D48] pb-3 transition-colors duration-300">
+              </fa-icon>
+              <h1 [ngClass]="item.titleC">
+                {{ item.title }}
+              </h1>
+              <p [ngClass]="item.descC" class="md:text-[14px]">
+                {{ item.desc }}
+              </p>
+              <button 
+              [ngClass]="item.btnC + (item.disabled ? ' opacity-50 cursor-not-allowed' : ' group-hover:bg-[#E11D48] group-hover:border-transparent')" class="md:absolute md:w-[89%] md:mx-auto md:bottom-4"
+              [disabled]="item.disabled">
+              {{ item.btn }}
+            </button>
+            </div>
+          </div>
+</div>
+
+
+  

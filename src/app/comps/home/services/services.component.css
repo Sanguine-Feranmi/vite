@@ -1,0 +1,10 @@
+.card:hover fa-icon
+{
+    font-size: 52px;
+    transform: 5s;
+}
+.card:hover button
+{
+    background: #E11D48;
+    border: 1px solid transparent;
+}
