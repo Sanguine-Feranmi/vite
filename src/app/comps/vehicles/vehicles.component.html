@@ -23,20 +23,21 @@
            </div>
            <!-- Price Range -->
            <div class="mb-4">
-             <label for="price" class="block text-sm font-medium mb-1">Price Range</label>
-             <div class="flex items-center justify-between text-sm text-gray-400 mb-2">
-               <span>₦{{ filters.minPrice | number }}</span>
-               <span>₦{{ filters.maxPrice | number }}</span>
-             </div>
-             <input
-               type="range"
-               id="price"
-               [(ngModel)]="filters.price"
-               [min]="filters.minPrice"
-               [max]="filters.maxPrice"
-               class="w-full accent-[#E11D48] h-1"
-             />
-           </div>
+            <label for="price" class="block text-sm font-medium mb-1">Price Range</label>
+            <div class="flex items-center justify-between text-sm text-gray-400 mb-2">
+              <span>₦{{ filters.price | number }}</span>
+              <span>₦{{ filters.maxPrice | number }}</span>
+            </div>
+            <input
+              type="range"
+              id="price"
+              [(ngModel)]="filters.price"
+              [min]="filters.minPrice"
+              [max]="filters.maxPrice"
+              class="w-full accent-[#E11D48] h-1"
+            />
+          </div>
+          
        
            <!-- Year Dropdown -->
            <div class="mb-4">
@@ -67,62 +68,62 @@
          <!-- carsssss -->
          <div class="lg:w-[70%]">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div  *ngFor="let car of filteredCars"
+                class="bg-black text-white p-4 rounded-lg shadow-md relative"
+              >
+                <!-- Badge -->
                 <div
-                  *ngFor="let car of cars"
-                  class="bg-black text-white p-4 rounded-lg shadow-md relative"
+                  class="absolute bg-[#E11D48] text-white text-xs font-semibold px-3 py-1 rounded-full top-2 right-2"
                 >
-                  <!-- Badge -->
-                  <div
-                    class="absolute bg-[#E11D48] text-white text-xs font-semibold px-3 py-1 rounded-full top-2 right-2"
-                  >
-                    {{ car.type }}
-                  </div>
-              
-                  <!-- Image -->
-                  <img
-                    [src]="car.image"
-                    [alt]="car.title"
-                    class="w-full rounded-lg mb-4"
-                  />
-              
-                  <!-- Title -->
-                  <h2 class="text-lg font-semibold">{{ car.title }}</h2>
-              
-                  <!-- Price -->
-                  <p class="text-[#E11D48] text-xl font-bold mb-4">
-                    ₦{{ car.price | number }}
-                  </p>
-              
-                  <!-- Details -->
-                  <div class="text-sm text-gray-400 grid grid-cols-2 gap-4 mb-4">
-                    <div class="flex items-center gap-2">
-                      <i class="fas fa-gas-pump"></i>
-                      {{ car.fuelType }}
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <i class="fas fa-calendar-alt"></i>
-                      {{ car.year }}
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <i class="fas fa-road"></i>
-                      {{ car.mileage }}
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <i class="fas fa-cogs"></i>
-                      {{ car.transmission }}
-                    </div>
-                  </div>
-              
-                  <!-- Button -->
-                  <button
-                    class="bg-[#E11D48] text-white font-medium py-2 px-4 rounded-md w-full hover:bg-[#c0173f] transition duration-300" [routerLink]="['/vehicle', car.id]"
-                  >
-                    View Details
-                  </button>
+                  {{ car.type }}
                 </div>
+          
+                <!-- Image -->
+                <img
+                  [src]="car.image"
+                  [alt]="car.title"
+                  class="w-full rounded-lg mb-4"
+                />
+          
+                <!-- Title -->
+                <h2 class="text-lg font-semibold">{{ car.title }}</h2>
+          
+                <!-- Price -->
+                <p class="text-[#E11D48] text-xl font-bold mb-4">
+                  ₦{{ car.price | number }}
+                </p>
+          
+                <!-- Details -->
+                <div class="text-sm text-gray-400 grid grid-cols-2 gap-4 mb-4">
+                  <div class="flex items-center gap-2">
+                    <i class="fas fa-gas-pump"></i>
+                    {{ car.fuelType }}
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="fas fa-calendar-alt"></i>
+                    {{ car.year }}
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="fas fa-road"></i>
+                    {{ car.mileage }}
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="fas fa-cogs"></i>
+                    {{ car.transmission }}
+                  </div>
+                </div>
+          
+                <!-- Button -->
+                <button
+                  class="bg-[#E11D48] text-white font-medium py-2 px-4 rounded-md w-full hover:bg-[#c0173f] transition duration-300"
+                  [routerLink]="['/vehicle', car.id]"
+                >
+                  View Details
+                </button>
               </div>
-              
-         </div>
+            </div>
+          </div>
+          
      </div>
   </div>
   
