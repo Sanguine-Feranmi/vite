@@ -1,49 +1,29 @@
 <div>
     <nav
-      class="transition-all duration-300 "
-      [ngClass]="{
-        'bg-gray-800/80 text-white': isDarkMode,
-        'bg-white text-gray-800/50': !isDarkMode
-      }"
-    >
+      class="transition-all duration-300"
+      [ngClass]="{'bg-black/30 text-white': isDarkMode, 'bg-white/70 text-gray-800': !isDarkMode}">
       <div class="max-w-screen-xl flex items-center justify-between mx-auto px-4 py-2">
         <!-- Logo -->
         <div class="flex items-center space-x-3">
-            <img [src]=img class="w-8" alt="">
+            <img [src]=img class="w-8 rounded-full" alt="">
           <span
             class="text-xl font-bold"
-            [ngClass]="{ 'text-white': isDarkMode, 'text-gray-800': !isDarkMode }"
-          >
+            [ngClass]="{ 'text-white': isDarkMode, 'text-gray-800': !isDarkMode }">
             MIDE&DARA MOTORS
           </span>
-        </div>
-  
+        </div>  
         <!-- Hamburger Button -->
         <button
-          class="md:hidden p-2 rounded-lg"
-          (click)="toggleMenu()"
-          [ngClass]="{
-            'bg-gray-700 hover:bg-gray-600': isDarkMode,
-            'bg-gray-200 hover:bg-gray-300': !isDarkMode
-          }"
-        >
+          class="md:hidden p-2 rounded-lg" (click)="toggleMenu()"
+          [ngClass]="{'bg-gray-700 hover:bg-gray-600': isDarkMode, 'bg-gray-200 hover:bg-gray-300': !isDarkMode}">
           <fa-icon
-            [icon]="isMenuOpen ? faTimes : faBars"
-            [ngClass]="{ 'text-gray-300': isDarkMode, 'text-gray-800': !isDarkMode }"
-          ></fa-icon>
-        </button>
-  
+            [icon]="isMenuOpen ? faTimes : faBars" [ngClass]="{ 'text-gray-300': isDarkMode, 'text-gray-800': !isDarkMode }"></fa-icon>
+        </button>  
         <!-- Navigation Links (Desktop) -->
         <ul class="hidden md:flex space-x-6">
           <li *ngFor="let item of navItems">
-            <a
-              [href]="item.link"
-              [ngClass]="{
-                'text-gray-300 hover:text-white': isDarkMode,
-                'text-gray-800 hover:text-gray-900': !isDarkMode,
-                'font-bold': item.active
-              }"
-            >
+            <a [href]="item.link"
+              [ngClass]="{'text-gray-300 hover:text-white': isDarkMode, 'text-gray-800 hover:text-gray-900': !isDarkMode,'font-bold': item.active}">
               {{ item.label }}
             </a>
           </li>
@@ -56,22 +36,14 @@
             <input
               type="text"
               placeholder="Search vehicles..."
-              [ngClass]="{
-                'bg-gray-700 text-gray-300 placeholder-gray-400 focus:ring-red-500 focus:border-red-500':
-                  isDarkMode,
-                'bg-gray-200 text-gray-800 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500':
-                  !isDarkMode
-              }"
-              class="w-full p-2 text-sm rounded-lg focus:outline-none"
-            />
+              [ngClass]="{'bg-gray-700 text-gray-300 placeholder-gray-400 focus:ring-red-500 focus:border-red-500':
+                  isDarkMode, 'bg-gray-200 text-gray-800 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500':
+                  !isDarkMode}" class="w-full p-2 text-sm rounded-lg focus:outline-none"/>
             <div class="absolute inset-y-0 left-2 flex items-center pointer-events-none">
               <fa-icon
-                [icon]="faMagnifyingGlass"
-                [ngClass]="{ 'text-gray-400': isDarkMode, 'text-gray-500': !isDarkMode }"
-              ></fa-icon>
+                [icon]="faMagnifyingGlass" [ngClass]="{ 'text-gray-400': isDarkMode, 'text-gray-500': !isDarkMode }"></fa-icon>
             </div>
           </div>
-  
           <!-- Theme Toggle -->
           <button
             (click)="toggleTheme()"

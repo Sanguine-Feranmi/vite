@@ -1,0 +1,49 @@
+<div class="text-white px-5">
+    <div class="flex flex-col lg:flex-row gap-6">
+      <!-- Image Section -->
+      <div class="flex flex-col gap-4">
+        <img [src]="vehicle.image" [alt]="vehicle.title" class="w-full rounded-lg" />
+        <div class="flex gap-2">
+          <img [src]="vehicle.image" [alt]="vehicle.title" class="w-20 rounded-lg border-2 border-[#E11D48]" />
+        </div>
+      </div>
+  
+      <!-- Details Section -->
+      <div>
+        <h1 class="text-2xl font-semibold">{{ vehicle.title }}</h1>
+        <p class="text-[#E11D48] text-3xl font-bold mb-6">₦{{ vehicle.price | number }}</p>
+  
+        <div class="grid grid-cols-2 gap-4 text-sm text-gray-400 mb-6">
+          <div><strong>Fuel Type:</strong> {{ vehicle.fuelType }}</div>
+          <div><strong>Year:</strong> {{ vehicle.year }}</div>
+          <div><strong>Mileage:</strong> {{ vehicle.mileage }}</div>
+          <div><strong>Transmission:</strong> {{ vehicle.transmission }}</div>
+        </div>
+  
+        <!-- Specifications -->
+        <div>
+          <h2 class="text-lg font-semibold mb-2">Vehicle Specifications</h2>
+          <div class="grid grid-cols-2 gap-4 text-sm text-gray-400">
+            <div><strong>Engine:</strong> {{ vehicle.engine }}</div>
+            <div><strong>Power:</strong> {{ vehicle.power }}</div>
+            <div><strong>0-100 km/h:</strong> {{ vehicle.acceleration }}</div>
+            <div><strong>Top Speed:</strong> {{ vehicle.topSpeed }}</div>
+          </div>
+        </div>
+  
+        <!-- Description -->
+        <div class="mt-6">
+          <h2 class="text-lg font-semibold mb-2">Description</h2>
+          <p>{{ vehicle.description }}</p>
+        </div>
+  
+        <!-- Button -->
+        <button
+          class="bg-[#E11D48] text-white font-medium py-2 px-4 rounded-md mt-4 hover:bg-[#c0173f] transition duration-300"
+        >
+          Negotiate Price
+        </button>
+      </div>
+    </div>
+  </div>
+  

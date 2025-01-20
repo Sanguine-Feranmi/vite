@@ -22,7 +22,7 @@ export class NavbarComponent {
   isMenuOpen = false;
 
   navItems = [
-    { label: 'Home', link: '/home'},
+    { label: 'Home', link: ''},
     { label: 'About', link: '/about'},
     { label: 'Vehicles', link: '/vehicles'},
   ];

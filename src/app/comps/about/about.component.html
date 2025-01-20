@@ -1,1 +1,33 @@
-<p>about works!</p>
+<div class="text-white bg-black">
+    <!-- hero -->
+    <div class="abt h-[50vh] w-full flex items-center justify-center text-center">
+       <div>
+          <h1 class="text-5xl font-bold">About Us</h1>
+          <p>Leading the way in luxury automotive excellence since 2016</p>
+       </div>
+    </div>
+     <!-- next -->
+      <div class="flex flex-col py-10 px-7 lg:flex-row max-w-lg:justify-between lg:align-middle lg:items-center">
+        <!-- story -->
+         <div class="flex flex-col gap-5 lg:w-[60%]">
+            <h1 class="text-4xl font-semibold italic">Our Story</h1>
+            <p class="leading-9">Founded in 2016, MIDE&DARA MOTORS has been at the forefront of the luxury automotive industry for over five decades. What started as a small dealership has grown into one of Nigeria's most trusted names in premium vehicles. <br> Our commitment to excellence, customer satisfaction, and innovative solutions has earned us numerous accolades and the trust of thousands of satisfied customers across the nation.</p>
+         </div>
+         <!-- cards -->
+         <div class="grid grid-cols-2 gap-6 text-white lg:w-[40%]  pt-7">
+            <div
+              *ngFor="let stat of stats"
+              class="bg-black rounded-lg p-6 flex flex-col items-start gap-1 border border-gray-700"
+            >
+              <fa-icon [icon]="stat.icon" class="text-2xl text-[#E11D48]"></fa-icon>
+              <h3 class="text-xl font-semibold">
+                {{ stat.value }}
+              </h3>
+              <p class="text-gray-400">
+                {{ stat.description }}
+              </p>
+            </div>
+          </div>
+          
+      </div>
+</div>

@@ -1,18 +1,21 @@
-<div class="">
-  <!-- navbar -->
-   <div class="">
-    <app-navbar></app-navbar>
-   </div>
-  <!-- navbar  ends-->
-   <!-- Router -->
-    <div class="">
+<div class="relative flex flex-col justify-between h-screen bg-black ">
+  <div class="">
+    <!-- navbar -->
+    <div class="sticky top-0">
+      <app-navbar></app-navbar>
+    </div>
+    <!-- navbar ends -->
+    
+    <!-- Router -->
+    <div class="content">
       <router-outlet></router-outlet>
     </div>
-   <!-- Router ends-->
-    <!-- footer  -->
-     <div class="">
-      <app-footer></app-footer>
-     </div>
-    <!-- footer end -->
-
+    <!-- Router ends -->
+  </div>
+  
+  <!-- footer -->
+  <div class="w-full">
+    <app-footer></app-footer>
+  </div>
+  <!-- footer end -->
 </div>

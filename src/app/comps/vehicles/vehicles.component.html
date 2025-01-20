@@ -1,1 +1,128 @@
-<p>vehicles works!</p>
+<div class="text-white px-8 flex flex-col gap-8 bg-black">
+    <!-- Head -->
+    <div class="pt-7">
+      <h1 class="text-3xl font-bold">Our Vehicle Collection</h1>
+      <p>Discover our extensive range of premium vehicles</p>
+    </div>
+    <!-- tail  -->
+     <div class="flex flex-col lg:flex-row md:justify-between ">
+         <!-- Range -->
+         <div class="bg-black text-white p-6 rounded-md border-[1px] border-gray-500 w-full lg:w-[30%]">
+           <h2 class="text-2xl font-bold mb-6">Filters</h2>
+           <!-- Make Dropdown -->
+           <div class="mb-4">
+             <label for="make" class="block text-sm font-medium mb-1">Make</label>
+             <select
+               id="make"
+               [(ngModel)]="filters.make"
+               class="w-full bg-black text-white border border-gray-600 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#E11D48] appearance-none"
+             >
+               <option value="">All Makes</option>
+               <option *ngFor="let make of makes" [value]="make">{{ make }}</option>
+             </select>
+           </div>
+           <!-- Price Range -->
+           <div class="mb-4">
+             <label for="price" class="block text-sm font-medium mb-1">Price Range</label>
+             <div class="flex items-center justify-between text-sm text-gray-400 mb-2">
+               <span>₦{{ filters.minPrice | number }}</span>
+               <span>₦{{ filters.maxPrice | number }}</span>
+             </div>
+             <input
+               type="range"
+               id="price"
+               [(ngModel)]="filters.price"
+               [min]="filters.minPrice"
+               [max]="filters.maxPrice"
+               class="w-full accent-[#E11D48] h-1"
+             />
+           </div>
+       
+           <!-- Year Dropdown -->
+           <div class="mb-4">
+             <label for="year" class="block text-sm font-medium mb-1">Year</label>
+             <select
+               id="year"
+               [(ngModel)]="filters.year"
+               class="w-full bg-black text-white border border-gray-600 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#E11D48] appearance-none"
+             >
+               <option value="">All Years</option>
+               <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+             </select>
+           </div>
+       
+           <!-- Body Type Dropdown -->
+           <div class="mb-4">
+             <label for="bodyType" class="block text-sm font-medium mb-1">Body Type</label>
+             <select
+               id="bodyType"
+               [(ngModel)]="filters.bodyType"
+               class="w-full bg-black text-white border border-gray-600 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-[#E11D48] appearance-none"
+             >
+               <option value="">All Body Types</option>
+               <option *ngFor="let type of bodyTypes" [value]="type">{{ type }}</option>
+             </select>
+           </div>
+         </div>
+         <!-- carsssss -->
+         <div class="lg:w-[70%]">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div
+                  *ngFor="let car of cars"
+                  class="bg-black text-white p-4 rounded-lg shadow-md relative"
+                >
+                  <!-- Badge -->
+                  <div
+                    class="absolute bg-[#E11D48] text-white text-xs font-semibold px-3 py-1 rounded-full top-2 right-2"
+                  >
+                    {{ car.type }}
+                  </div>
+              
+                  <!-- Image -->
+                  <img
+                    [src]="car.image"
+                    [alt]="car.title"
+                    class="w-full rounded-lg mb-4"
+                  />
+              
+                  <!-- Title -->
+                  <h2 class="text-lg font-semibold">{{ car.title }}</h2>
+              
+                  <!-- Price -->
+                  <p class="text-[#E11D48] text-xl font-bold mb-4">
+                    ₦{{ car.price | number }}
+                  </p>
+              
+                  <!-- Details -->
+                  <div class="text-sm text-gray-400 grid grid-cols-2 gap-4 mb-4">
+                    <div class="flex items-center gap-2">
+                      <i class="fas fa-gas-pump"></i>
+                      {{ car.fuelType }}
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fas fa-calendar-alt"></i>
+                      {{ car.year }}
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fas fa-road"></i>
+                      {{ car.mileage }}
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fas fa-cogs"></i>
+                      {{ car.transmission }}
+                    </div>
+                  </div>
+              
+                  <!-- Button -->
+                  <button
+                    class="bg-[#E11D48] text-white font-medium py-2 px-4 rounded-md w-full hover:bg-[#c0173f] transition duration-300" [routerLink]="['/vehicle', car.id]"
+                  >
+                    View Details
+                  </button>
+                </div>
+              </div>
+              
+         </div>
+     </div>
+  </div>
+  
