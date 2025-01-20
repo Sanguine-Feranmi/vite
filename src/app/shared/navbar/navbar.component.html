@@ -46,7 +46,22 @@
           </div>
           <!-- Theme Toggle -->
           <button
+            (click)="toggleDarkMode()"
+            class="p-2 rounded-lg"
+            [ngClass]="{
+              'bg-gray-700 hover:bg-gray-600': isDarkMode,
+              'bg-gray-200 hover:bg-gray-300': !isDarkMode
+            }"
+          >
+          {{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}
+            <!-- <fa-icon
+              [icon]="isDarkMode ? faSun : faMoon"
+              [ngClass]="{ 'text-gray-300': isDarkMode, 'text-gray-800': !isDarkMode }"
+            ></fa-icon> -->
+          </button>
+          <!-- <button
             (click)="toggleTheme()"
+            (click)="toggleDarkMode()"
             class="p-2 rounded-lg"
             [ngClass]="{
               'bg-gray-700 hover:bg-gray-600': isDarkMode,
@@ -57,7 +72,7 @@
               [icon]="isDarkMode ? faSun : faMoon"
               [ngClass]="{ 'text-gray-300': isDarkMode, 'text-gray-800': !isDarkMode }"
             ></fa-icon>
-          </button>
+          </button> -->
   
           <!-- Profile Icon -->
           <button

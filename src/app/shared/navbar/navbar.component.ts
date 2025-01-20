@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';  
 import { faMagnifyingGlass, faUser, faMoon, faSun, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-
+import { DarkModeService } from '../../services/dark-mode.service';
 
 @Component({
   selector: 'app-navbar',
@@ -18,7 +18,7 @@ export class NavbarComponent {
   faBars = faBars; 
   faTimes = faTimes; 
 
-  isDarkMode = true; 
+  // isDarkMode = true; 
   isMenuOpen = false;
 
   navItems = [
@@ -35,5 +35,17 @@ export class NavbarComponent {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  isDarkMode = false;
+
+  constructor(private darkModeService: DarkModeService) {
+    this.darkModeService.isDarkMode$.subscribe((mode) => {
+      this.isDarkMode = mode;
+    });
+  }
+
+  toggleDarkMode() {
+    this.darkModeService.toggleDarkMode();
   }
 }
