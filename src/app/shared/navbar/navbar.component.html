@@ -53,11 +53,11 @@
               'bg-gray-200 hover:bg-gray-300': !isDarkMode
             }"
           >
-          {{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}
-            <!-- <fa-icon
+          <!-- {{ isDarkMode ? 'Light Mode' : 'Dark Mode' }} -->
+            <fa-icon
               [icon]="isDarkMode ? faSun : faMoon"
               [ngClass]="{ 'text-gray-300': isDarkMode, 'text-gray-800': !isDarkMode }"
-            ></fa-icon> -->
+            ></fa-icon>
           </button>
           <!-- <button
             (click)="toggleTheme()"

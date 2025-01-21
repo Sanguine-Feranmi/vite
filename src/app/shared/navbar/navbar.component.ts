@@ -18,7 +18,7 @@ export class NavbarComponent {
   faBars = faBars; 
   faTimes = faTimes; 
 
-  // isDarkMode = true; 
+  isDarkMode = true; 
   isMenuOpen = false;
 
   navItems = [
@@ -37,7 +37,7 @@ export class NavbarComponent {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  isDarkMode = false;
+  // isDarkMode = false;
 
   constructor(private darkModeService: DarkModeService) {
     this.darkModeService.isDarkMode$.subscribe((mode) => {
