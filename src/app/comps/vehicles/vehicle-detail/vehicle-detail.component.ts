@@ -11,6 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 export class VehicleDetailComponent implements OnInit {
   vehicle: any;
 
+  // showModal: boolean = false;
+
   vehicles = [
     {
       id: 1,

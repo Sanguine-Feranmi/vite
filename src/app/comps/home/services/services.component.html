@@ -19,7 +19,7 @@
               </p>
               <button 
               [ngClass]="item.btnC + (item.disabled ? ' opacity-50 cursor-not-allowed' : ' group-hover:bg-[#E11D48] group-hover:border-transparent')" class="md:absolute md:w-[89%] md:mx-auto md:bottom-4"
-              [disabled]="item.disabled">
+              [disabled]="item.disabled" [routerLink]="item.label" >
               {{ item.btn }}
             </button>
             </div>

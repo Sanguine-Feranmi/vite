@@ -1,0 +1,90 @@
+<div class=" text-white">
+    <!-- hero -->
+    <div class="abt h-[50vh] w-full flex items-center justify-center text-center">
+        <div>
+           <h1 class="text-3xl md:text-5xl font-bold">Flexible Financing Solutions</h1>
+           <p>Tailored financial services to make your dream car a reality</p>
+        </div>
+     </div>
+     <!-- tailllllllll -->
+      <div class="pb-10">
+        <!-- top -->
+         <div class="">
+            <h1 class="text-center text-2xl font-bold">Financing Options</h1>
+         </div>
+         <!-- sec  -->
+          <div class="">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-7 text-white bg-black p-8">
+                <div
+                  *ngFor="let option of financingOptions" class= "finop bg-transparent border-[1px] border-gray-600 rounded-lg px-6 py-6 shadow-md flex flex-col gap-1">
+                  <!-- Icon -->
+                  <div class="icoo text-[#E11D48] text-4xl mb-4">
+                    <fa-icon [icon]="option.icon"></fa-icon>
+                  </div>
+              
+                  <!-- Title -->
+                  <h2 class=" md:text-[16px] text-xl font-bold">{{ option.title }}</h2>
+              
+                  <!-- Description -->
+                  <p class="text-gray-400 md:text-[14px] ">{{ option.description }}</p>
+              
+                  <!-- Features -->
+                  <ul class="text-left text-sm ">
+                    <li *ngFor="let feature of option.features" class="flex items-center gap-2 md:text-[12px]">
+                      <span class="text-[#E11D48]">•</span> {{ feature }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+          </div>
+          <!-- third  -->
+           <div class="py-7 bg-[#18181A]">
+            <!-- top -->
+            <div class="">
+                <h1 class="text-center text-2xl font-bold">Maintenance Policies</h1>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-white p-8">
+                <div
+                  *ngFor="let plan of pricingPlans"
+                  [ngClass]="{
+                    'border border-[#E11D48]': plan.isPopular,
+                  }"
+                  class="rounded-lg p-6 shadow-md text-center relative bg-black"
+                >
+                  <!-- Popular Badge -->
+                  <div
+                    *ngIf="plan.isPopular"
+                    class="absolute top-[-15px] left-1/2 transform -translate-x-1/2 bg-[#E11D48] text-white md:text-[12px] text-sm font-bold px-4 py-1 rounded-full"
+                  >
+                    Most Popular
+                  </div>
+              
+                  <!-- Title -->
+                  <h2 class="text-xl font-bold mb-2">{{ plan.title }}</h2>
+              
+                  <!-- Price -->
+                  <p class="text-[#E11D48] text-3xl font-bold">{{ plan.price }}</p>
+                  <p class="text-gray-400">{{ plan.period }}</p>
+              
+                  <!-- Features -->
+                  <ul class="text-left text-sm space-y-2 my-4">
+                    <li *ngFor="let feature of plan.features" class="flex items-center gap-2">
+                      <fa-icon [icon]=plan.icon class="text-[#E11D48]"></fa-icon>
+                      {{ feature }}
+                    </li>
+                  </ul>
+              
+                  <!-- Button -->
+                  <button
+                    class="bg-[#E11D48] text-white py-2 px-4 rounded-lg hover:bg-[#c61d3b] transition"
+                  >
+                    {{ plan.buttonText }}
+                  </button>
+                </div>
+              </div>
+                           
+           </div>
+      </div>
+
+</div>

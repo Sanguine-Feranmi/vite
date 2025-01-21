@@ -20,6 +20,7 @@ export class ServicesComponent {
       descC: 'text-gray-500 text-[18px]',
       btn: 'View Collecction',
       btnC : 'border-gray-500 border-[1px] bg-transparent rounded-md w-full py-2 text-white',
+      label : '/vehicles',
       disabled: false
     },
     {
@@ -30,6 +31,7 @@ export class ServicesComponent {
       descC: 'text-gray-500 text-[18px]',
       btn: 'View Option',
       btnC : 'border-gray-500 border-[1px] bg-transparent rounded-md w-full py-2 text-white',
+      label : '/financing',
       disabled: false
     },
     {

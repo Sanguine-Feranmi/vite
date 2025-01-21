@@ -12,6 +12,8 @@ import { ServicesComponent } from './comps/home/services/services.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { VehicleDetailComponent } from './comps/vehicles/vehicle-detail/vehicle-detail.component';
+import { FinancingComponent } from './comps/financing/financing.component';
+import { NegotiatepriceComponent } from './comps/vehicles/vehicle-detail/negotiateprice/negotiateprice.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { VehicleDetailComponent } from './comps/vehicles/vehicle-detail/vehicle-
     VehiclesComponent,
     ServicesComponent,
     FooterComponent,
-    VehicleDetailComponent
+    VehicleDetailComponent,
+    FinancingComponent,
+    NegotiatepriceComponent
   ],
   imports: [
     BrowserModule,
