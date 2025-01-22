@@ -10,6 +10,12 @@ import { faBuilding, faUser, faTrophy, faHeart } from '@fortawesome/free-solid-s
 })
 export class AboutComponent {
 
+  addr = {
+    address : '1 Makinde St, Alausa 101233, Ikeja, Lagos',
+    phone : '+234(0) 8183-558-181',
+    email : 'midedara@midedaramotors.com.ng',
+
+  }
   stats = [
     {
       icon: faBuilding,
