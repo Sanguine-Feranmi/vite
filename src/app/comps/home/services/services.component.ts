@@ -25,7 +25,7 @@ export class ServicesComponent {
     },
     {
       icon:  faCreditCard,
-      title: 'Premium Vehicles',
+      title: 'Flexible Financing',
       titleC: 'text-2xl',
       desc: 'Tailored financial solutions including vehicle loans, leasing options, and maintenance policies.',
       descC: 'text-gray-500 text-[18px]',

@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { VehicleDetailComponent } from './comps/vehicles/vehicle-detail/vehicle-detail.component';
 import { FinancingComponent } from './comps/financing/financing.component';
 import { NegotiatepriceComponent } from './comps/vehicles/vehicle-detail/negotiateprice/negotiateprice.component';
-
+import { ContactComponent } from './comps/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { NegotiatepriceComponent } from './comps/vehicles/vehicle-detail/negotia
     FooterComponent,
     VehicleDetailComponent,
     FinancingComponent,
-    NegotiatepriceComponent
+    NegotiatepriceComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
