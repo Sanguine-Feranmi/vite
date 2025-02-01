@@ -7,7 +7,7 @@ import { DarkModeService } from '../../services/dark-mode.service';
   standalone: false,
   
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
   arrowRight = faArrowRight;

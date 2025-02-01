@@ -6,7 +6,7 @@ import { faBuilding, faUser, faTrophy, faHeart } from '@fortawesome/free-solid-s
   standalone: false,
   
   templateUrl: './about.component.html',
-  styleUrl: './about.component.css'
+  styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
 

@@ -7,7 +7,7 @@ import { faShieldAlt, faWallet, faCheck } from '@fortawesome/free-solid-svg-icon
   standalone: false,
   
   templateUrl: './financing.component.html',
-  styleUrl: './financing.component.css'
+  styleUrls: ['./financing.component.css']
 })
 export class FinancingComponent {
   financingOptions = [

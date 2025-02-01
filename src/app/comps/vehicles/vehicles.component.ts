@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   standalone: false,
   
   templateUrl: './vehicles.component.html',
-  styleUrl: './vehicles.component.css'
+  styleUrls: ['./vehicles.component.css']
 })
 export class VehiclesComponent {
   filters = {

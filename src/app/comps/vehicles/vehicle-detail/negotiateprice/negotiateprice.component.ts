@@ -5,7 +5,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   standalone: false,
   
   templateUrl: './negotiateprice.component.html',
-  styleUrl: './negotiateprice.component.css'
+  styleUrls: ['./negotiateprice.component.css']
 })
 export class NegotiatepriceComponent {
   @Input() vehicleTitle: string = '';

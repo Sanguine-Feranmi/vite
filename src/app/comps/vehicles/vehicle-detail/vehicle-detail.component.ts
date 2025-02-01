@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
   standalone: false,
   
   templateUrl: './vehicle-detail.component.html',
-  styleUrl: './vehicle-detail.component.css'
+  styleUrls: ['./vehicle-detail.component.css']
 })
 export class VehicleDetailComponent implements OnInit {
   vehicle: any;

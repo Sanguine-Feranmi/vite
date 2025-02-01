@@ -7,7 +7,7 @@ import { faRecycle, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
   standalone: false,
   
   templateUrl: './services.component.html',
-  styleUrl: './services.component.css'
+  styleUrls: ['./services.component.css']
 })
 export class ServicesComponent {
 
